@@ -1,0 +1,868 @@
+/* Header */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #d170bc;
+  color: white;
+  padding: 1rem 2rem;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+header .logo {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.logo-entreprise {
+  width: 150px;
+  height: auto;
+  display: block;
+  margin: 20px auto;
+  width: 80px;
+  height: auto;
+}
+
+
+.logo-img {
+  width: 50px; /* Largeur fixe */
+  height: auto; /* Maintient les proportions */
+  border-radius: 50%; /* Si tu veux un logo circulaire */
+}
+
+
+header .header-text {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+}
+
+header h1 {
+  margin: 0;
+  font-size: 1.5rem;
+}
+
+header p {
+  margin: 0;
+  font-size: 0.9rem;
+  color: #ffffffb3;
+}
+
+/* Desktop Menu */
+.menu-desktop {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  gap: 1rem;
+}
+
+.menu-desktop li a {
+  color: white;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.menu-desktop li a:hover {
+  color: #f0a500;
+}
+
+/* Mobile Menu */
+.hamburger {
+  display: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  background: none;
+  border: none;
+  color: white;
+}
+
+.menu-mobile {
+  display: none; /* Masqué par défaut */
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  background: #c598ce;
+  flex-direction: column;
+  gap: 1rem;
+  padding: 1rem 0;
+  list-style: none;
+  text-align: center;
+}
+
+.menu-mobile li a {
+  color: white;
+  text-decoration: none;
+  padding: 0.5rem 0;
+  transition: background 0.3s;
+}
+
+.menu-mobile li a:hover {
+  background: #f0a500;
+}
+
+/* Responsiveness */
+@media (max-width: 768px) {
+  .menu-desktop {
+    display: none;
+  }
+
+  .hamburger {
+    display: block;
+  }
+
+  .menu-mobile.show {
+    display: flex; /* Affiche le menu mobile quand activé */
+  }
+}
+
+
+.dark-mode-btn {
+  position: fixed; /* Position fixe pour qu'il reste en bas à droite */
+  bottom: 20px; /* Distance par rapport au bas de la fenêtre */
+  right: 20px; /* Distance par rapport au bord droit */
+  background-color: rgba(0, 0, 0, 0.4); /* Couleur de fond */
+  color: white; /* Couleur du texte ou de l'icône */
+  border: none; /* Supprime la bordure */
+  border-radius: 50%; /* Bouton circulaire */
+  font-size: 1.5rem; /* Taille du texte ou de l'icône */
+  padding: 10px; /* Espacement interne */
+  z-index: 1000; /* Assure que le bouton est au-dessus des autres éléments */
+  cursor: pointer; /* Change le curseur au survol */
+  transition: background-color 0.3s ease, transform 0.3s ease; /* Transition fluide */
+}
+
+/* Mode sombre */
+body.dark-mode {
+  background-color: #121212; /* Couleur de fond sombre */
+  color: #f1f1f1; /* Texte clair */
+}
+
+/* Section et autres conteneurs en mode sombre */
+section.dark-mode, header.dark-mode, footer.dark-mode {
+  background-color: #1f1f1f; /* Fond sombre */
+  color: #f1f1f1; /* Texte clair */
+}
+
+/* Gérer les liens en mode sombre */
+section.dark-mode a, header.dark-mode a, footer.dark-mode a {
+  color: #bb86fc; /* Bleu clair pour les liens */
+  text-decoration: none;
+}
+
+/* Inputs, boutons et formulaires */
+input.dark-mode, textarea.dark-mode, button.dark-mode {
+  background-color: #1f1f1f; /* Fond sombre des formulaires */
+  color: #f1f1f1; /* Texte clair */
+  border: 1px solid #bb86fc; /* Bordure bleue */
+}
+
+/* Bordure ou texte des boutons au survol */
+button.dark-mode:hover {
+  background-color: #bb86fc; /* Bleu clair pour les boutons survolés */
+  color: #1f1f1f; /* Texte sombre */
+}
+
+/* Ajoutez un style spécifique pour les bordures ou séparateurs */
+hr.dark-mode {
+  border-color: #3a3a3a; /* Ligne grise en mode sombre */
+}
+
+/* Mode nuit pour la section À propos de moi */
+#about.dark-mode {
+  background-color: #1f1f1f; /* Fond sombre */
+  color: #f1f1f1; /* Texte clair */
+}
+
+#about.dark-mode h2, 
+#about.dark-mode h3 {
+  color: #bb86fc; /* Couleur des titres */
+}
+
+#about.dark-mode p, 
+#about.dark-mode ul li {
+  color: #f1f1f1; /* Couleur du texte */
+}
+
+#about.dark-mode a {
+  color: #80cbc4; /* Liens dans la section */
+}
+
+#about.dark-mode img.avatar {
+  border: 2px solid #bb86fc; /* Bordure pour l'image en mode nuit */
+}
+
+/* Sous-sections pour "Parcours académique", "Projets", etc. */
+#about.dark-mode .about-section {
+  background-color: #292929; /* Fond légèrement différent pour distinguer */
+  border: 1px solid #3a3a3a; /* Bordure discrète */
+  padding: 15px;
+  margin-bottom: 15px;
+}
+
+/* Mode nuit pour "Compétences" */
+#skills.dark-mode {
+  background-color: #1f1f1f; /* Fond sombre */
+  color: #f1f1f1; /* Texte clair */
+}
+
+#skills.dark-mode h2,
+#skills.dark-mode h3 {
+  color: #ffab40; /* Couleur des titres */
+}
+
+#skills.dark-mode a {
+  color: #80cbc4; /* Liens */
+}
+
+#skills.dark-mode .skills-container {
+  background-color: #292929; /* Fond de la section des compétences */
+  border: 1px solid #3a3a3a; /* Bordure discrète */
+  padding: 10px;
+}
+
+#skills.dark-mode .skill {
+  background-color: #2c2c2c; /* Fond des blocs de compétence */
+  border: 1px solid #3a3a3a;
+  padding: 10px;
+  margin-bottom: 10px;
+}
+
+
+/* Mode nuit pour la section Contact */
+#contact.dark-mode {
+  background-color: #121212;  /* Fond noir pour la section */
+  color: #e0e0e0;  /* Texte clair pour le contraste */
+  padding: 40px 20px; /* Espacement autour */
+}
+
+/* Formulaire avec fond noir */
+#contact.dark-mode form {
+  background-color: #121212; /* Fond noir pour le formulaire */
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Ombre subtile */
+}
+
+/* Champs de formulaire avec fond plus clair que le formulaire */
+#contact.dark-mode .form-group input,
+#contact.dark-mode .form-group textarea {
+  background-color: #2c2c2c;  /* Fond gris foncé pour les champs */
+  color: #e0e0e0;  /* Texte clair */
+  border: 1px solid #444;  /* Bordures sombres visibles */
+  border-radius: 5px;
+  padding: 10px;
+  width: 100%;
+  margin-bottom: 20px; /* Espace entre les champs */
+}
+
+/* Ajustement du texte de placeholder */
+#contact.dark-mode .form-group input::placeholder,
+#contact.dark-mode .form-group textarea::placeholder {
+  color: #aaa; /* Placeholder gris clair */
+}
+
+/* Bouton d'envoi */
+#contact.dark-mode button {
+  background-color: #ff9800; /* Fond orange vif pour le bouton */
+  color: #121212; /* Texte sombre dans le bouton */
+  border: none;
+  padding: 12px 30px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+#contact.dark-mode button:hover {
+  background-color: #e68900; /* Légère teinte plus foncée au survol */
+}
+
+/* Liens vers les réseaux sociaux */
+#contact.dark-mode .social-links a {
+  color: #80cbc4; /* Couleur claire pour les icônes */
+  font-size: 1.5em;
+  margin: 0 10px; /* Espacement entre les icônes */
+  transition: color 0.3s ease;
+}
+
+#contact.dark-mode .social-links a:hover {
+  color: #ff9800; /* Changement de couleur au survol */
+}
+
+/* Espacement et marges pour une meilleure organisation */
+#contact.dark-mode .form-group {
+  margin-bottom: 20px; /* Espacement entre les champs */
+}
+
+
+
+.dark-mode-btn:hover {
+  background-color: rgba(0, 0, 0, 0.6); /* Change la couleur au survol */
+  transform: scale(1.1); /* Agrandit légèrement le bouton au survol */
+}
+
+
+header .logo,
+header nav ul li a {
+color: white; /* Texte des éléments dans le header devient blanc */
+}
+
+.contenu {
+color: #f1f1f1; /* Texte dans les sections devient blanc en mode nuit */
+}
+
+.logo {
+color: #f1f1f1; /* Couleur du logo devient blanc en mode nuit */
+}
+
+/* Si vous avez un bouton de mode nuit spécifique, vous pouvez aussi changer son style */
+.dark-mode-btn {
+background: none;
+border: none;
+color: white;
+font-size: 1.5rem;
+cursor: pointer;
+transition: color 0.3s;
+}
+
+/* Ajoutez plus de styles selon vos besoins pour d'autres éléments en mode nuit */
+
+
+/* ------------------------------
+ Intro Banner
+------------------------------ */
+.intro-banner {
+  text-align: center;
+  padding: 4rem 2rem;
+  background: linear-gradient(to right, #6a11cb, #2575fc);
+  color: white;
+}
+
+.profile-pic {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  margin-bottom: 1rem;
+}
+
+.download-btn {
+  display: inline-block;
+  margin-top: 1rem;
+  padding: 0.8rem 1.5rem;
+  background: #fff;
+  color: #6a11cb;
+  font-weight: bold;
+  border-radius: 5px;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.download-btn:hover {
+  background: #6a11cb;
+  color: white;
+}
+
+
+
+
+/* Effet au survol */
+.boutton:hover {
+  transform: translateY(-5px); /* Le bouton "remonte" légèrement */
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4); /* Ombre plus profonde */
+}
+
+/* Effet lors du clic */
+.boutton:active {
+  transform: translateY(2px); /* Le bouton "s'enfonce" */
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2); /* Réduction de l'ombre */
+}
+
+.cv-button {
+  display: inline-block;
+  padding: 15px 30px;
+  background-color: #a02147; /* Couleur de fond */
+  color: #fff; /* Texte blanc */
+  font-size: 18px;
+  font-weight: bold;
+  text-decoration: none; /* Supprime le soulignement si c'est un lien */
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.3s ease; /* Transition fluide pour les transformations */
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3); /* Ombre initiale pour effet 3D */
+}
+
+/* Effet au survol */
+.cv-button:hover {
+  transform: translateY(-5px); /* Le bouton "remonte" légèrement */
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4); /* Ombre plus profonde */
+  background-color: #db96dd; /* Couleur de fond change au survol */
+  color: #fff; /* Le texte reste blanc */
+}
+
+/* Effet lors du clic */
+.cv-button:active {
+  transform: translateY(2px); /* Le bouton "s'enfonce" */
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2); /* Ombre réduite pour simuler l'enfoncement */
+}
+
+/* Menu desktop */
+.menu-desktop ul {
+  display: flex;
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.menu-desktop ul li {
+  margin: 0 10px;
+}
+
+/* Menu mobile - masqué par défaut */
+.menu-mobile {
+  display: none;
+  position: absolute;
+  top: 150px; /* Ajuste cette valeur pour aligner avec l'avatar */
+  left: 0;
+  background-color: #a02147;
+  width: 100%; /* Prend toute la largeur */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  z-index: 1000; /* Assure que le menu est visible au-dessus des autres éléments */
+  padding: 0; /* Supprime les marges internes par défaut */
+}
+
+.menu-mobile ul {
+  list-style-type: none;
+  padding: 10px;
+}
+
+.menu-mobile ul li {
+  margin: 10px 0;
+}
+
+/* Hamburger */
+.hamburger {
+  display: none;
+  font-size: 1.5rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+/* Media Queries pour rendre le site responsive */
+@media (max-width: 768px) {
+  .menu-desktop {
+    display: none;
+  }
+
+  .hamburger {
+    display: block;
+  }
+
+  .menu-mobile {
+    display: none; /* Masqué par défaut */
+  }
+
+  .menu-mobile.open {
+    display: block; /* Affiché quand on ouvre le menu */
+  }
+}
+
+/* Style général */
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  padding: 0;
+  background-color: #ee7fd2;
+  line-height: 1.6;
+}
+
+
+
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  background-color: #f4f4f4;
+}
+
+.contenu h1 {
+  margin: 0;
+  font-size: 1.5rem;
+}
+
+.contenu h2 {
+  margin: 0;
+  font-size: 1rem;
+  color: #555;
+}
+
+.logo {
+  width: 150px;
+}
+
+
+
+/* Styles de base */
+.plongee, .medecine, .ecosys {
+  background: #e0e7ffd2;
+  padding: 20px; /* Ajoute de l'espace intérieur pour le texte */
+  color: rgb(0, 0, 0); /* Texte noir pour contraster avec l'image */
+  font-family: Arial, sans-serif; /* Police pour le texte */
+  border-radius: 10px; /* Coins arrondis */
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1); /* Ombre douce initiale */
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Transition fluide */
+}
+
+/* Effet 3D au survol */
+.plongee:hover, .medecine:hover, .ecosys:hover {
+  transform: scale(1.05); /* Gonfle légèrement la section */
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2); /* Ombre plus prononcée */
+}
+
+.ecosys_demonstration {
+  width: 200px; /* Réduit la largeur de l'image à 200px */
+  height: auto; /* Maintient les proportions */
+  max-width: 100%; /* L'image ne dépassera pas la largeur de son conteneur */
+}
+
+
+
+/* Style pour la section globale */
+#about {
+  padding: 40px 20px;
+  background-color: #e0e7ffd2;
+  color: #333;
+  font-family: Arial, sans-serif;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Style pour chaque sous-section */
+.about-section {
+  margin-bottom: 20px;
+  padding: 20px;
+  border-radius: 8px;
+  background-color: #ffffff; /* Couleur de fond légèrement différente */
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Effet au survol */
+.about-section:hover {
+  transform: scale(1.02); /* Gonfle légèrement */
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2); /* Ombre plus prononcée */
+}
+
+/* Style spécifique à la section Avatar */
+.avatar-section {
+  text-align: center;
+}
+
+.avatar {
+  border-radius: 50%;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  margin-bottom: 20px;
+}
+
+/* Style pour les titres */
+.about-section h3 {
+  color: #a02147; /* Couleur spécifique pour les titres */
+  margin-bottom: 10px;
+  border-bottom: 2px solid #9cd5fd;
+  padding-bottom: 5px;
+}
+
+/* Style pour les listes */
+.about-section ul {
+  list-style-type: disc;
+  padding-left: 20px;
+  margin: 10px 0;
+  /*background-color: #f9f9f9; *//* Couleur de fond légère */
+  /*padding: 15px; *//* Espace interne */
+  /*border-radius: 10px; *//* Coins arrondis */
+  /*border: 1px solid #ddd;*/ /* Bordure subtile */
+  /*max-width: 600px; *//* Largeur maximale */
+  /*margin: 0 auto; *//* Centre la liste */
+}
+
+.about-section ul li {
+  margin: 5px 0;
+}
+
+#skills {
+  background: #e0e7ffd2;
+  border-top: 2px solid #ddd;
+  border-bottom: 2px solid #ddd;
+  padding: 40px 20px;
+  overflow-x: hidden; /* Empêche tout débordement horizontal */
+}
+
+.skills-container {
+  display: flex;
+  flex-wrap: wrap; /* Permet aux éléments de se réorganiser sur plusieurs lignes si nécessaire */
+  justify-content: space-between; /* Espace égal entre les éléments */
+  gap: 20px; /* Espacement entre les éléments */
+}
+
+.skill {
+  min-width: 250px; /* Largeur minimale des éléments */
+  max-width: 30%; /* Limite la largeur des éléments pour éviter qu'ils ne débordent */
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3); /* Ombre initiale pour effet 3D */
+  transition: box-shadow 0.3s ease, transform 0.3s ease; /* Transition fluide */
+  flex-grow: 1; /* Permet aux éléments de se redimensionner de manière égale */
+  box-sizing: border-box; /* Inclut les bordures et padding dans la largeur totale */
+}
+
+/* Effet au survol pour faire ressortir le bouton en 3D */
+.skill:hover {
+  transform: translateY(-8px); /* Le "soulever" légèrement */
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4); /* Ombre plus profonde au survol */
+}
+
+/* Optionnel : Style des titres dans la section des compétences */
+#skills h3 {
+  color: #a02147;
+  margin-bottom: 10px;
+  border-bottom: 2px solid #9cd5fd;
+  padding-bottom: 5px;
+}
+
+/* Liste des compétences */
+#skills ul {
+  list-style-type: disc;
+  padding-left: 20px;
+  list-style: none;
+}
+
+#skills ul li {
+  margin: 5px 0;
+}
+
+#skills li a {
+  color: #a02147;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+#skills li a:hover {
+  text-decoration: underline;
+  color: #db96dd;
+}
+
+/* Pour petits écrans, afficher les compétences en colonne */
+@media (max-width: 768px) {
+  .skills-container {
+    flex-direction: column; /* Passer en colonne sur petits écrans */
+    align-items: center; /* Centrer les éléments */
+  }
+
+  .skill {
+    min-width: 90%; /* Assurer qu'ils occupent plus de place sur les petits écrans */
+    max-width: 100%; /* Assurer que l'élément prend toute la largeur disponible */
+  }
+}
+
+
+
+header {
+  background:#701958 ;
+  color: #ffffff;
+  padding: 20px 0;
+  text-align: center;
+}
+
+/* Section Contact */
+#contact {
+  padding: 60px 20px;
+  background: #e0e7ffd2;
+  text-align: center;
+  color: #000000; /* Texte sombre par défaut */
+}
+
+#contact h2 {
+  font-size: 2.5em;
+  margin-bottom: 20px;
+  color: #0f1e2c;
+}
+
+#contact p {
+  font-size: 1.2em;
+  margin-bottom: 40px;
+  color: #555;
+}
+
+#contact form {
+  max-width: 600px;
+  margin: 0 auto 40px auto;
+  background: #fff;
+  padding: 20px 30px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+#contact .form-group {
+  margin-bottom: 20px;
+  text-align: left;
+}
+
+#contact .form-group label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: bold;
+  color: #333;
+}
+
+#contact .form-group input,
+#contact .form-group textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 1em;
+  color: #a02147;
+  ;
+}
+
+#contact .form-group textarea {
+  resize: none;
+}
+
+#contact button {
+  display: inline-block;
+  background: #a02147;
+  color: #fff;
+  font-size: 1.2em;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+#contact button:hover {
+  background: #db96dd;
+}
+
+/* Social Links */
+#contact .social-links {
+  margin-top: 20id="rotating-word"px;
+}
+
+#contact .social-links p {
+  font-size: 1.2em;
+  margin-bottom: 10px;
+}
+
+#contact .social-links a {
+  color: #a02147;
+  font-size: 2em;
+  margin: 0 10px;
+  transition: color 0.3s;
+}
+
+#contact .social-links a:hover {
+  color: #db96dd;
+}
+
+nav ul {
+  list-style: none;
+  padding: 0;
+}
+
+nav ul li {
+  display: inline;
+  margin: 0 15px;
+}
+
+nav ul li a {
+  color: #ffffff;
+  text-decoration: none;
+}
+
+nav ul li a:hover {
+  color: #db96dd; /* Couleur au survol */
+}
+
+section {
+  padding: 20px;
+  margin: 20px;
+  background: #fbfcfb;
+  border-radius: 5px;
+}
+
+.project {
+  margin-bottom: 20px;
+}
+
+footer {
+  text-align: center;
+  padding: 10px 0;
+  background: #35424a;
+  color: #ffffff;
+}
+
+/* Style pour tous les liens */
+a {
+  color: #a02147; /* Couleur par défaut des liens */
+  text-decoration: none; /* Supprime le soulignement */
+}
+
+a:hover {
+  color: #db96dd; /* Couleur au survol */
+  text-decoration: underline; /* Ajoute un soulignement */
+}
+
+/* Section des Projets avec Illustration */
+.projects-section {
+  display: flex; /* Aligne les éléments horizontalement */
+  align-items: center; /* Centre verticalement le texte et l'image */
+  gap: 20px; /* Espace entre le texte et l'image */
+}
+
+/* Texte des projets */
+.projects-content {
+  flex: 2; /* Le texte occupe 2 parts */
+}
+
+/* Image des projets */
+.projects-image {
+  flex: 1; /* L'image occupe 1 part */
+  text-align: center; /* Centre l'image */
+}
+
+.projects-image img {
+  max-width: 100%; /* L'image s'adapte à la largeur de son conteneur */
+  border-radius: 10px; /* Coins arrondis pour un effet moderne */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Ombre subtile */
+}
+
+/* Mode Responsive */
+@media (max-width: 768px) {
+  .projects-section {
+      flex-direction: column; /* Empile le texte et l'image */
+      text-align: center; /* Centre tout sur petits écrans */
+  }
+
+  .projects-image img {
+      margin-bottom: 20px; /* Espace sous l'image */
+  }
+}
+
+.interests-image {
+  display: flex;
+  justify-content: center; /* Centre horizontalement */
+  align-items: center;    /* Centre verticalement */
+  height: 100%;           /* Définit la hauteur du conteneur pour centrer verticalement */
+}
+
